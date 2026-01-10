@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Página No Encontrada - Desouches Propiedades">
+    <section class="error-404">
+        <div class="error-404__container">
+            <div class="error-404__content">
+                <h1 class="error-404__code">404</h1>
+                <h2 class="error-404__title">¡Ups! Esta propiedad no existe</h2>
+                <p class="error-404__text">
+                    Parece que la página que buscás no se encuentra disponible o fue removida.
+                    No te preocupes, tenemos muchas otras opciones para vos.
+                </p>
+                
+                <div class="error-404__buttons">
+                    <a href="/" class="error-404__button error-404__button--primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                        </svg>
+                        Volver al Inicio
+                    </a>
+                    <a href="#propiedades" class="error-404__button error-404__button--secondary">
+                        Ver Propiedades
+                    </a>
+                </div>
+
+                <div class="error-404__links">
+                    <p class="error-404__links-title">Enlaces útiles:</p>
+                    <div class="error-404__links-grid">
+                        <a href="/#propiedades" class="error-404__link">Propiedades</a>
+                        <a href="/#tasaciones" class="error-404__link">Tasaciones</a>
+                        <a href="/#contacto" class="error-404__link">Contacto</a>
+                        <a href="https://www.zonaprop.com.ar/inmobiliarias/desouches-propiedades.html" target="_blank" class="error-404__link">Ver en ZonaProp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-404__illustration">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#ef7c1c" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.4,90,-15.8,88.5,-0.1C87,14.6,81.4,28.4,73.1,40.7C64.8,53,53.8,63.8,40.8,71.1C27.8,78.4,12.8,82.2,-2.6,86.6C-18,91,-36,96,-50.2,89.4C-64.4,82.8,-74.8,64.6,-81.4,46.3C-88,28,-90.8,9.6,-89.1,-7.9C-87.4,-25.4,-81.2,-42,-71.6,-55.4C-62,-68.8,-49,-79,-34.8,-85.4C-20.6,-91.8,-5.2,-94.4,8.7,-93.9C22.6,-93.4,30.6,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+                </svg>
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<style>
+.error-404 {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary) 0%, #2a4060 100%);
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.error-404::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(239, 124, 28, 0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.error-404__container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.error-404__content {
+    text-align: center;
+}
+
+.error-404__code {
+    font-size: 8rem;
+    font-weight: 900;
+    margin: 0;
+    background: linear-gradient(135deg, #ffffff 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.error-404__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+}
+
+.error-404__text {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0 0 2.5rem 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-404__buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.error-404__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.error-404__button--primary {
+    background: var(--secondary);
+    color: var(--white);
+    box-shadow: 0 10px 20px rgba(239, 124, 28, 0.3);
+}
+
+.error-404__button--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(239, 124, 28, 0.4);
+    background: var(--secondary-hover);
+}
+
+.error-404__button--secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.error-404__button--secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.error-404__links {
+    margin-top: 2rem;
+}
+
+.error-404__links-title {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.error-404__links-grid {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.error-404__link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.error-404__link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--secondary);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.error-404__link:hover {
+    color: var(--secondary);
+}
+
+.error-404__link:hover::after {
+    transform: scaleX(1);
+}
+
+.error-404__illustration {
+    display: none;
+}
+
+.error-404__illustration svg {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    opacity: 0.3;
+}
+
+@media (min-width: 768px) {
+    .error-404__container {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+    }
+
+    .error-404__content {
+        text-align: left;
+    }
+
+    .error-404__text {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .error-404__buttons {
+        justify-content: flex-start;
+    }
+
+    .error-404__links-grid {
+        justify-content: flex-start;
+    }
+
+    .error-404__illustration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .error-404__code {
+        font-size: 10rem;
+    }
+
+    .error-404__title {
+        font-size: 2.5rem;
+    }
+}
+</style>
