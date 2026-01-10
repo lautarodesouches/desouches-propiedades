@@ -1,26 +1,26 @@
 ---
 ---
 
-<header class="header">
-  <nav class="navbar">
-    <a class="navbar__logo" href="#">
-      <img class="navbar__img" src="/assets/logo.png" alt="Logo Desouches propiedades" />
+<header class="header" role="banner">
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <a class="navbar__logo" href="#" aria-label="Ir a inicio - Desouches Propiedades">
+      <img class="navbar__img" src="/assets/logo.png" alt="Logo Desouches Propiedades" />
       <h1 class='navbar__title'>Desouches propiedades</h1>
     </a>
-    <svg xmlns="http://www.w3.org/2000/svg" class="navbar__svg" viewBox="0 0 16 16">
+    <svg xmlns="http://www.w3.org/2000/svg" class="navbar__svg" viewBox="0 0 16 16" aria-label="Abrir menú" role="button" tabindex="0">
       <path fill-rule="evenodd"
         d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
     </svg>
-    <ul class="navbar__ul">
+    <ul class="navbar__ul" role="menu">
       <li class="navbar__close-li">
-        <svg xmlns="http://www.w3.org/2000/svg" class="navbar__close" viewBox="0 0 16 16">
+        <svg xmlns="http://www.w3.org/2000/svg" class="navbar__close" viewBox="0 0 16 16" aria-label="Cerrar menú" role="button" tabindex="0">
            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
         </svg>
       </li>
-      <li class="navbar__li"><a class="navbar__link navbar__linkActive" href="#inicio"> Inicio </a></li>
-      <li class="navbar__li"><a class="navbar__link" href="#propiedades"> Propiedades </a></li>
-      <li class="navbar__li"><a class="navbar__link" href="#tasaciones"> Tasaciones </a></li>
-      <li class="navbar__li"><a class="navbar__link" href="#contacto"> Contacto </a></li>
+      <li class="navbar__li" role="none"><a class="navbar__link navbar__linkActive" href="#inicio" role="menuitem"> Inicio </a></li>
+      <li class="navbar__li" role="none"><a class="navbar__link" href="#propiedades" role="menuitem"> Propiedades </a></li>
+      <li class="navbar__li" role="none"><a class="navbar__link" href="#tasaciones" role="menuitem"> Tasaciones </a></li>
+      <li class="navbar__li" role="none"><a class="navbar__link" href="#contacto" role="menuitem"> Contacto </a></li>
     </ul>
   </nav>
 </header>
