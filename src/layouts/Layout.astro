@@ -28,6 +28,28 @@ const { title } = Astro.props;
             gtag('js', new Date());
             gtag('config', 'G-LKL5CKRM87');
         </script>
+        <script>
+            // Scroll Reveal Animation Script
+            document.addEventListener('DOMContentLoaded', () => {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('reveal-visible');
+                            observer.unobserve(entry.target); // Only animate once
+                        }
+                    });
+                }, observerOptions);
+
+                const revealElements = document.querySelectorAll('.reveal');
+                revealElements.forEach(el => observer.observe(el));
+            });
+        </script>
 	</head>
 	<body>
 		<slot />
