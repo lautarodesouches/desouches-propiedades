@@ -1,0 +1,103 @@
+---
+---
+<section class="section tasaciones" id="tasaciones">
+  <div class="tasaciones__div">
+    <h2 class="tasaciones__title">Tasaciones</h2>
+    <p class="tasaciones__text">Si estás buscando una tasación precisa y confiable para tu propiedad, no dudes en
+      ponerte en contacto con
+      nuestro equipo experto en tasación. Estaremos encantados de proporcionarte un servicio personalizado y de
+      calidad, adaptado a tus necesidades específicas.</p>
+    <button class="tasaciones__button">TASAR MI PROPIEDAD</button>
+  </div>
+  <div class="tasaciones__div">
+    <img class="tasaciones__img" src="/assets/tasaciones/tasacion.jpg" alt="tasación" loading=lazy>
+  </div>
+  <form class="form">
+    <svg xmlns="http://www.w3.org/2000/svg" class="form__close" viewBox="0 0 16 16">
+      <path
+        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+    </svg>
+    <h3 class="form__title">Ingresá tus datos</h3>
+    <div class="form__div">
+      <input class="form__input required" type="text" name="nombre" placeholder="Nombre" required>
+    </div>
+    <div class="form__div">
+      <input class="form__input required" type="email" name="email" placeholder="Email" required>
+    </div>
+    <div class="form__sub">
+      <div class="form__div">
+        <input class="form__input required" type="text" name="tipo_de_propiedad" placeholder="Tipo de propiedad"
+          required>
+      </div>
+      <div class="form__div">
+        <select name="tipo_de_operacion" class="form__input required" required>
+          <option value="" disabled selected>Operación</option>
+          <option value="Vender">VENDER</option>
+          <option value="Alquilar">ALQUILAR</option>
+        </select>
+      </div>
+      <div class="form__subdiv">
+        <input class="form__input" type="text" placeholder="Direccion">
+      </div>
+      <div class="form__subdiv">
+        <input class="form__input" type="text" placeholder="Barrio / Localidad">
+      </div>
+      <div class="form__subdiv">
+        <input class="form__input" type="text" placeholder="Superficie">
+      </div>
+      <div class="form__subdiv">
+        <input class="form__input" type="number" placeholder="Ambientes">
+      </div>
+    </div>
+    <button class="form__button" type="submit">Enviar</button>
+  </form>
+</section>
+
+<script>
+  const tasaciones__button = document.querySelector(".tasaciones__button") as HTMLElement;
+  const form = document.querySelector(".form") as HTMLFormElement;
+  const form_close = document.querySelector(".form__close") as HTMLElement;
+  const navbarUl = document.querySelector(".navbar__ul") as HTMLElement;
+
+  if (tasaciones__button && form) {
+    tasaciones__button.onclick = () => form.classList.add("showForm");
+  }
+
+  if (form_close && form) {
+    form_close.onclick = () => form.classList.remove("showForm");
+  }
+
+  if (form) {
+      form.onsubmit = (e) => {
+        e.preventDefault();
+
+        // Close mobile menu if open
+        if (window.innerWidth < 768 && navbarUl) {
+            navbarUl.classList.remove("show");
+        }
+
+        console.log(e);
+        
+        // Helper to get input value by index
+        const getValue = (index: number) => {
+            const element = (e.target as any)[index] as HTMLInputElement;
+            return element ? element.value : '';
+        };
+
+        const nombre = getValue(0);
+        const email = getValue(1);
+        const tipo_propiedad = getValue(2);
+        const operacion = getValue(3);
+        const direccion = getValue(4);
+        const barrio = getValue(5);
+        const superficie = getValue(6);
+        const ambientes = getValue(7);
+
+        const salto_linea = "%0a%0a";
+
+        const mensaje = `Hola! Mi nombre es ${nombre} y estoy interesado/a en ${operacion} mi ${tipo_propiedad} ubicado/a en ${direccion}, ${barrio}.${salto_linea}Cuenta con ${superficie} m2 y ${ambientes} ambientes.${salto_linea}Para poder brindarles más información, pueden contactarse conmigo a través de este número de WhatsApp, o a través de mi correo electrónico ${email}.`;
+
+        window.location.href = `https://desouchespropiedades.com.ar/whatsapp/?text=${mensaje}`;
+      }
+  }
+</script>

@@ -1,0 +1,76 @@
+---
+---
+
+<header class="header">
+  <nav class="navbar">
+    <a class="navbar__logo" href="#">
+      <img class="navbar__img" src="/assets/logo.png" alt="Logo Desouches propiedades" />
+      <h1 class='navbar__title'>Desouches propiedades</h1>
+    </a>
+    <svg xmlns="http://www.w3.org/2000/svg" class="navbar__svg" viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+    </svg>
+    <ul class="navbar__ul">
+      <li class="navbar__li"><a class="navbar__link navbar__linkActive" href="#inicio"> Inicio </a></li>
+      <li class="navbar__li"><a class="navbar__link" href="#propiedades"> Propiedades </a></li>
+      <li class="navbar__li"><a class="navbar__link" href="#tasaciones"> Tasaciones </a></li>
+      <li class="navbar__li"><a class="navbar__link" href="#contacto"> Contacto </a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const header = document.querySelector(".header") as HTMLElement;
+  const navbarLinks = document.querySelectorAll(".navbar__link");
+  const sections = document.querySelectorAll("section");
+  const navbarSvg = document.querySelector(".navbar__svg") as HTMLElement;
+  const navbarUl = document.querySelector(".navbar__ul") as HTMLElement;
+
+  const changeHeaderClassScrolled = (add: boolean) => {
+      if (add) header.classList.add("header__scrolled");
+      else header.classList.remove("header__scrolled");
+  }
+
+  const changeActiveLink = () => {
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      // header.clientHeight might be null if not found, but it is found.
+      const scrollY = window.scrollY + header.clientHeight;
+
+      if (scrollY >= sectionTop && scrollY < (sectionTop + sectionHeight)) {
+        const sectionId = section.getAttribute("id");
+        navbarLinks.forEach(link => {
+            if (link.getAttribute("href") === "#" + sectionId) {
+                link.classList.add("navbar__linkActive");
+            } else {
+                link.classList.remove("navbar__linkActive");
+            }
+        });
+      }
+    });
+  }
+
+  const ifMoblieCloseMenu = () => {
+    if (window.innerWidth < 768) {
+        navbarUl.classList.toggle("show");
+    }
+  }
+
+  // Event Listeners
+  document.onscroll = () => {
+    changeHeaderClassScrolled(window.scrollY !== 0);
+    changeActiveLink();
+  }
+
+  if (navbarSvg) {
+      navbarSvg.onclick = () => navbarUl.classList.toggle("show");
+  }
+
+  if (navbarUl) {
+      navbarUl.onclick = () => {
+        ifMoblieCloseMenu();
+      }
+  }
+</script>
